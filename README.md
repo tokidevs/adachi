@@ -2,6 +2,11 @@
 
 Portfolio-grade **React + TypeScript** dashboard shell with **Tailwind CSS v4**, a **token-based theme engine** (light, dark, neon, glass), **Framer Motion** page and UI micro-interactions, and example views: **landing**, **analytics**, **profile**, and **settings**.
 
+## Links
+
+- **Repository:** [github.com/tokidevs/adachi](https://github.com/tokidevs/adachi)
+- **Live demo:** [adachi-theta.vercel.app](https://adachi-theta.vercel.app)
+
 ## Run locally
 
 ```bash
