@@ -13,6 +13,9 @@
     "url": "https://github.com/tokidevs/adachi/issues"
   },
   "homepage": "https://github.com/tokidevs/adachi#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "react",
     "design-system",
