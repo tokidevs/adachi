@@ -12,10 +12,9 @@ export type ThemeId = 'light' | 'dark' | 'neon' | 'glass'
 
 const STORAGE_KEY = 'adachi-theme'
 
-type ThemeContextValue = {
+export type ThemeContextValue = {
   theme: ThemeId
   setTheme: (t: ThemeId) => void
-  /** Maps light/dark pair for quick toggle */
   resolvedBase: 'light' | 'dark'
 }
 
@@ -25,10 +24,16 @@ function applyDomTheme(theme: ThemeId) {
   document.documentElement.dataset.theme = theme
 }
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+export type ThemeProviderProps = {
+  children: ReactNode
+  /** Override persisted storage key (e.g. multi-app on same origin) */
+  storageKey?: string
+}
+
+export function ThemeProvider({ children, storageKey = STORAGE_KEY }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<ThemeId>(() => {
     if (typeof window === 'undefined') return 'light'
-    const stored = localStorage.getItem(STORAGE_KEY) as ThemeId | null
+    const stored = localStorage.getItem(storageKey) as ThemeId | null
     let initial: ThemeId
     if (stored === 'light' || stored === 'dark' || stored === 'neon' || stored === 'glass') {
       initial = stored
@@ -41,8 +46,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     applyDomTheme(theme)
-    localStorage.setItem(STORAGE_KEY, theme)
-  }, [theme])
+    localStorage.setItem(storageKey, theme)
+  }, [theme, storageKey])
 
   const setTheme = useCallback((t: ThemeId) => {
     setThemeState(t)
@@ -59,7 +64,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
-// eslint-disable-next-line react-refresh/only-export-components -- colocated hook for theme context
 export function useTheme(): ThemeContextValue {
   const ctx = useContext(ThemeContext)
   if (!ctx) throw new Error('useTheme must be used within ThemeProvider')

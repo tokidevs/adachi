@@ -1,0 +1,4 @@
+/* App shell only — design tokens and utilities ship from @tokidevs/adachi/styles.css */
+#root {
+  min-height: 100dvh;
+}

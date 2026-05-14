@@ -7,7 +7,7 @@ import {
   X,
 } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
-import { cn } from '../../lib/cn'
+import { cn } from '@tokidevs/adachi'
 
 const links = [
   { to: '/dashboard/analytics', label: 'Analytics', icon: BarChart3 },

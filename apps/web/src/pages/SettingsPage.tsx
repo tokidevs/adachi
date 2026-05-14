@@ -1,10 +1,13 @@
 import { Bell, Mail } from 'lucide-react'
 import { useState } from 'react'
-import { Button } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
-import { Dropdown, type DropdownOption } from '../components/ui/Dropdown'
-import { Input } from '../components/ui/Input'
-import { Modal } from '../components/ui/Modal'
+import {
+  Button,
+  Card,
+  Dropdown,
+  Input,
+  Modal,
+  type DropdownOption,
+} from '@tokidevs/adachi'
 import { ThemeMenu } from '../components/layout/ThemeMenu'
 
 const densityOptions: DropdownOption<'comfortable' | 'compact'>[] = [

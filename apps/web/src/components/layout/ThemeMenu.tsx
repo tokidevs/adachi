@@ -1,6 +1,5 @@
 import { Droplet, GlassWater, Moon, Sun } from 'lucide-react'
-import { Dropdown, type DropdownOption } from '../ui/Dropdown'
-import { useTheme, type ThemeId } from '../../context/ThemeContext'
+import { Dropdown, useTheme, type DropdownOption, type ThemeId } from '@tokidevs/adachi'
 
 const options: DropdownOption<ThemeId>[] = [
   { value: 'light', label: 'Light', icon: <Sun className="size-4" /> },

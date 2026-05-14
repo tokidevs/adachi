@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowDownRight, ArrowUpRight, Eye, MousePointerClick, Users } from 'lucide-react'
-import { Card } from '../components/ui/Card'
+import { Card } from '@tokidevs/adachi'
 
 const bars = [42, 65, 48, 78, 56, 88, 72, 94, 61, 84, 70, 92]
 

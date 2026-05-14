@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { ThemeProvider } from './context/ThemeContext'
+import { ThemeProvider } from '@tokidevs/adachi'
 import { DashboardLayout } from './components/layout/DashboardLayout'
 import { AnalyticsPage } from './pages/AnalyticsPage'
 import { LandingPage } from './pages/LandingPage'

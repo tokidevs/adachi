@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion'
 import { Camera, MapPin, Shield } from 'lucide-react'
 import { useState } from 'react'
-import { Button } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
-import { Input } from '../components/ui/Input'
+import { Button, Card, Input } from '@tokidevs/adachi'
 
 export function ProfilePage() {
   const [name, setName] = useState('Jordan Adachi')

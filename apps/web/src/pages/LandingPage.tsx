@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, LayoutDashboard, Palette, Zap } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { Button } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
+import { Button, Card } from '@tokidevs/adachi'
 
 const fade = {
   initial: { opacity: 0, y: 16 },

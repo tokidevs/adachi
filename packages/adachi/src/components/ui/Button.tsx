@@ -4,7 +4,7 @@ import { cn } from '../../lib/cn'
 
 type Variant = 'primary' | 'gradient' | 'ghost'
 
-export type ButtonProps = HTMLMotionProps<'button'> & {
+export type ButtonProps = Omit<HTMLMotionProps<'button'>, 'children'> & {
   variant?: Variant
   children: ReactNode
 }
@@ -21,10 +21,16 @@ const variants: Record<Variant, string> = {
     'bg-transparent text-[var(--text-heading)] ring-1 ring-[var(--border)] hover:bg-[var(--accent-muted)] hover:ring-[var(--accent)]/30',
 }
 
-export function Button({ className, variant = 'primary', children, ...props }: ButtonProps) {
+export function Button({
+  className,
+  variant = 'primary',
+  children,
+  type = 'button',
+  ...props
+}: ButtonProps) {
   return (
     <motion.button
-      type="button"
+      type={type}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: 'spring', stiffness: 400, damping: 22 }}
